@@ -1,27 +1,41 @@
 {
-  "Seguridad y Acceso 🛡️": [
+  "express": [
     {
-      "name": "verificarToken",
-      "description": "Valida JWT en headers (Authorization: Bearer <token>)",
-      "type": "guard",
-      "from": "@/middleware/auth",
-      "suggestedFrameworks": ["express"]
+      "name": "requestLogger",
+      "type": "middleware",
+      "category": "Auditoría y Utilidades 🔍",
+      "description": "Consola formateada con método, ruta, status y tiempo de respuesta.",
+      "downloadUrl": "https://raw.githubusercontent.com/eddxke/nextNode-library/main/src/express/requestLogger.ts"
     },
     {
-      "name": "checkRole",
-      "description": "Restringe el acceso según roles (Admin, Premium, User)",
+      "name": "rateLimiter",
+      "type": "middleware",
+      "category": "Rendimiento y Tráfico 📈",
+      "description": "Control de velocidad (Max 100 peticiones por cada 15 min).",
+      "downloadUrl": "https://raw.githubusercontent.com/eddxke/nextNode-library/main/src/express/rateLimiter.ts"
+    },
+    {
+      "name": "verificarToken",
       "type": "guard",
-      "from": "@/middleware/roles",
-      "suggestedFrameworks": ["express"]
+      "category": "Seguridad y Acceso 🛡️",
+      "description": "Valida JWT en los headers de la petición (Authorization: Bearer).",
+      "downloadUrl": "https://raw.githubusercontent.com/eddxke/nextNode-library/main/src/express/verificarToken.ts"
     }
   ],
-  "Rendimiento y Tráfico 📈": [
+  "telegraf": [
     {
-      "name": "rateLimiter",
-      "description": "Control de velocidad (Max 100 peticiones por cada 15 min)",
+      "name": "limitarSpamBot",
       "type": "middleware",
-      "from": "@/middleware/rateLimiter",
-      "suggestedFrameworks": ["express"]
+      "category": "Rendimiento y Tráfico 📈",
+      "description": "Antiflood para evitar spam de comandos en el bot de Telegram.",
+      "downloadUrl": "https://raw.githubusercontent.com/eddxke/nextNode-library/main/src/telegraf/limitarSpamBot.ts"
+    },
+    {
+      "name": "autenticarTelegram",
+      "type": "guard",
+      "category": "Seguridad y Acceso 🛡️",
+      "description": "Valida que el ID de Telegram del usuario exista en tu Base de Datos.",
+      "downloadUrl": "https://raw.githubusercontent.com/eddxke/nextNode-library/main/src/telegraf/autenticarTelegram.ts"
     }
   ]
 }
