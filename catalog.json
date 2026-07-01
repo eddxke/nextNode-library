@@ -1,0 +1,27 @@
+{
+  "Seguridad y Acceso 🛡️": [
+    {
+      "name": "verificarToken",
+      "description": "Valida JWT en headers (Authorization: Bearer <token>)",
+      "type": "guard",
+      "from": "@/middleware/auth",
+      "suggestedFrameworks": ["express"]
+    },
+    {
+      "name": "checkRole",
+      "description": "Restringe el acceso según roles (Admin, Premium, User)",
+      "type": "guard",
+      "from": "@/middleware/roles",
+      "suggestedFrameworks": ["express"]
+    }
+  ],
+  "Rendimiento y Tráfico 📈": [
+    {
+      "name": "rateLimiter",
+      "description": "Control de velocidad (Max 100 peticiones por cada 15 min)",
+      "type": "middleware",
+      "from": "@/middleware/rateLimiter",
+      "suggestedFrameworks": ["express"]
+    }
+  ]
+}
