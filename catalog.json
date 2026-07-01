@@ -15,27 +15,27 @@
       "downloadUrl": "https://raw.githubusercontent.com/eddxke/nextNode-library/main/src/express/rateLimiter.ts"
     },
     {
-      "name": "verificarToken",
+      "name": "verifyToken",
       "type": "guard",
       "category": "Seguridad y Acceso 🛡️",
       "description": "Valida JWT en los headers de la petición (Authorization: Bearer).",
-      "downloadUrl": "https://raw.githubusercontent.com/eddxke/nextNode-library/main/src/express/verificarToken.ts"
+      "downloadUrl": "https://raw.githubusercontent.com/eddxke/nextNode-library/main/src/express/verifyToken.ts"
     }
   ],
   "telegraf": [
     {
-      "name": "limitarSpamBot",
+      "name": "limitBotSpam",
       "type": "middleware",
       "category": "Rendimiento y Tráfico 📈",
       "description": "Antiflood para evitar spam de comandos en el bot de Telegram.",
-      "downloadUrl": "https://raw.githubusercontent.com/eddxke/nextNode-library/main/src/telegraf/limitarSpamBot.ts"
+      "downloadUrl": "https://raw.githubusercontent.com/eddxke/nextNode-library/main/src/telegraf/limitBotSpam.ts"
     },
     {
-      "name": "autenticarTelegram",
+      "name": "authenticateTelegram",
       "type": "guard",
       "category": "Seguridad y Acceso 🛡️",
       "description": "Valida que el ID de Telegram del usuario exista en tu Base de Datos.",
-      "downloadUrl": "https://raw.githubusercontent.com/eddxke/nextNode-library/main/src/telegraf/autenticarTelegram.ts"
+      "downloadUrl": "https://raw.githubusercontent.com/eddxke/nextNode-library/main/src/telegraf/authenticateTelegram.ts"
     }
   ]
 }
