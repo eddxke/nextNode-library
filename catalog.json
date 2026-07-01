@@ -1,41 +1,82 @@
-{
-  "express": [
-    {
-      "name": "requestLogger",
-      "type": "middleware",
-      "category": "Auditoría y Utilidades 🔍",
-      "description": "Consola formateada con método, ruta, status y tiempo de respuesta.",
-      "downloadUrl": "https://raw.githubusercontent.com/eddxke/nextNode-library/main/src/express/requestLogger.ts"
-    },
-    {
-      "name": "rateLimiter",
-      "type": "middleware",
-      "category": "Rendimiento y Tráfico 📈",
-      "description": "Control de velocidad (Max 100 peticiones por cada 15 min).",
-      "downloadUrl": "https://raw.githubusercontent.com/eddxke/nextNode-library/main/src/express/rateLimiter.ts"
-    },
-    {
-      "name": "verifyToken",
-      "type": "guard",
-      "category": "Seguridad y Acceso 🛡️",
-      "description": "Valida JWT en los headers de la petición (Authorization: Bearer).",
-      "downloadUrl": "https://raw.githubusercontent.com/eddxke/nextNode-library/main/src/express/verifyToken.ts"
-    }
-  ],
-  "telegraf": [
-    {
-      "name": "limitBotSpam",
-      "type": "middleware",
-      "category": "Rendimiento y Tráfico 📈",
-      "description": "Antiflood para evitar spam de comandos en el bot de Telegram.",
-      "downloadUrl": "https://raw.githubusercontent.com/eddxke/nextNode-library/main/src/telegraf/limitBotSpam.ts"
-    },
-    {
-      "name": "authenticateTelegram",
-      "type": "guard",
-      "category": "Seguridad y Acceso 🛡️",
-      "description": "Valida que el ID de Telegram del usuario exista en tu Base de Datos.",
-      "downloadUrl": "https://raw.githubusercontent.com/eddxke/nextNode-library/main/src/telegraf/authenticateTelegram.ts"
-    }
-  ]
-}
+[
+  {
+    "name": "corsHandler",
+    "category": "security",
+    "type": "middleware",
+    "downloadUrl": "https://raw.githubusercontent.com/tu-usuario/intercept-hub/main/components/corsHandler.ts",
+    "description": "Habilita CORS de forma segura permitiendo el acceso controlado desde orígenes cruzados.",
+    "dependencies": ["cors", "@types/cors"]
+  },
+  {
+    "name": "validateBody",
+    "category": "validation",
+    "type": "guard",
+    "downloadUrl": "https://raw.githubusercontent.com/tu-usuario/intercept-hub/main/components/validateBody.ts",
+    "description": "Guardián polimórfico dinámico que valida que el body HTTP no venga vacío y sea un JSON estructurado.",
+    "dependencies": []
+  },
+  {
+    "name": "requestSanitizer",
+    "category": "security",
+    "type": "middleware",
+    "downloadUrl": "https://raw.githubusercontent.com/tu-usuario/intercept-hub/main/components/requestSanitizer.ts",
+    "description": "Sanitiza strings entrantes en req.body y req.query contra ataques básicos de XSS e inyección de scripts.",
+    "dependencies": []
+  },
+  {
+    "name": "roleAdminGuard",
+    "category": "auth",
+    "type": "guard",
+    "downloadUrl": "https://raw.githubusercontent.com/tu-usuario/intercept-hub/main/components/roleAdminGuard.ts",
+    "description": "Verifica si el usuario inyectado previamente en la request cuenta con el rol de Administrador.",
+    "dependencies": []
+  },
+  {
+    "name": "gzipCompressor",
+    "category": "performance",
+    "type": "middleware",
+    "downloadUrl": "https://raw.githubusercontent.com/tu-usuario/intercept-hub/main/components/gzipCompressor.ts",
+    "description": "Comprime las respuestas HTTP usando GZIP para reducir el consumo de ancho de banda.",
+    "dependencies": ["compression", "@types/compression"]
+  },
+  {
+    "name": "antiSpamGuard",
+    "category": "security",
+    "type": "guard",
+    "downloadUrl": "https://raw.githubusercontent.com/tu-usuario/intercept-hub/main/components/antiSpamGuard.ts",
+    "description": "Previene el spam en el Bot bloqueando usuarios que envían múltiples comandos en menos de 1.5 segundos.",
+    "dependencies": []
+  },
+  {
+    "name": "privateChatOnly",
+    "category": "filters",
+    "type": "guard",
+    "downloadUrl": "https://raw.githubusercontent.com/tu-usuario/intercept-hub/main/components/privateChatOnly.ts",
+    "description": "Filtra e impide que el comando sea ejecutado dentro de grupos o supergrupos de Telegram.",
+    "dependencies": []
+  },
+  {
+    "name": "maintenanceMode",
+    "category": "utils",
+    "type": "middleware",
+    "downloadUrl": "https://raw.githubusercontent.com/tu-usuario/intercept-hub/main/components/maintenanceMode.ts",
+    "description": "Intervención global que responde un mensaje de mantenimiento programado bloqueando el avance del flujo.",
+    "dependencies": []
+  },
+  {
+    "name": "adminBotGuard",
+    "category": "auth",
+    "type": "guard",
+    "downloadUrl": "https://raw.githubusercontent.com/tu-usuario/intercept-hub/main/components/adminBotGuard.ts",
+    "description": "Restringe comandos críticos del Bot de Telegram exclusivamente a una lista blanca de IDs de administradores.",
+    "dependencies": []
+  },
+  {
+    "name": "actionTracker",
+    "category": "analytics",
+    "type": "middleware",
+    "downloadUrl": "https://raw.githubusercontent.com/tu-usuario/intercept-hub/main/components/actionTracker.ts",
+    "description": "Mide el tiempo de respuesta interna de las interacciones y clics del Bot para auditoría de rendimiento.",
+    "dependencies": []
+  }
+]
