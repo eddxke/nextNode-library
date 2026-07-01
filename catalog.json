@@ -1,82 +1,119 @@
 [
   {
-    "name": "corsHandler",
+    "name": "rateLimiter",
+    "framework": "express",
     "category": "security",
     "type": "middleware",
-    "downloadUrl": "https://raw.githubusercontent.com/tu-usuario/intercept-hub/main/components/corsHandler.ts",
-    "description": "Habilita CORS de forma segura permitiendo el acceso controlado desde orígenes cruzados.",
+    "downloadUrl": "https://raw.githubusercontent.com/eddxke/nextNode-library/main/components/rateLimiter.ts",
+    "description": "Limita el número de peticiones HTTP por IP para evitar ataques de fuerza bruta en Express.",
+    "dependencies": ["express-rate-limit"]
+  },
+  {
+    "name": "verifyJwt",
+    "framework": "express",
+    "category": "auth",
+    "type": "guard",
+    "downloadUrl": "https://raw.githubusercontent.com/eddxke/nextNode-library/main/components/verifyJwt.ts",
+    "description": "Valida tokens JWT en las cabeceras HTTP de Express y protege rutas privadas.",
+    "dependencies": ["jsonwebtoken", "@types/jsonwebtoken"]
+  },
+  {
+    "name": "sessionLogger",
+    "framework": "telegraf",
+    "category": "utils",
+    "type": "middleware",
+    "downloadUrl": "https://raw.githubusercontent.com/eddxke/nextNode-library/main/components/sessionLogger.ts",
+    "description": "Registra en la consola los comandos de Telegraf y la metadata del usuario de Telegram.",
+    "dependencies": []
+  },
+  {
+    "name": "corsHandler",
+    "framework": "express",
+    "category": "security",
+    "type": "middleware",
+    "downloadUrl": "https://raw.githubusercontent.com/eddxke/nextNode-library/main/components/corsHandler.ts",
+    "description": "Habilita CORS de forma segura permitiendo el acceso controlado desde orígenes cruzados en Express.",
     "dependencies": ["cors", "@types/cors"]
   },
   {
     "name": "validateBody",
+    "framework": "express",
     "category": "validation",
     "type": "guard",
-    "downloadUrl": "https://raw.githubusercontent.com/tu-usuario/intercept-hub/main/components/validateBody.ts",
-    "description": "Guardián polimórfico dinámico que valida que el body HTTP no venga vacío y sea un JSON estructurado.",
+    "downloadUrl": "https://raw.githubusercontent.com/eddxke/nextNode-library/main/components/validateBody.ts",
+    "description": "Guardián polimórfico dinámico para Express que valida que el body HTTP no venga vacío y sea un JSON estructurado.",
     "dependencies": []
   },
   {
     "name": "requestSanitizer",
+    "framework": "express",
     "category": "security",
     "type": "middleware",
-    "downloadUrl": "https://raw.githubusercontent.com/tu-usuario/intercept-hub/main/components/requestSanitizer.ts",
-    "description": "Sanitiza strings entrantes en req.body y req.query contra ataques básicos de XSS e inyección de scripts.",
+    "downloadUrl": "https://raw.githubusercontent.com/eddxke/nextNode-library/main/components/requestSanitizer.ts",
+    "description": "Sanitiza strings entrantes en req.body y req.query de Express contra ataques básicos de XSS.",
     "dependencies": []
   },
   {
     "name": "roleAdminGuard",
+    "framework": "express",
     "category": "auth",
     "type": "guard",
-    "downloadUrl": "https://raw.githubusercontent.com/tu-usuario/intercept-hub/main/components/roleAdminGuard.ts",
-    "description": "Verifica si el usuario inyectado previamente en la request cuenta con el rol de Administrador.",
+    "downloadUrl": "https://raw.githubusercontent.com/eddxke/nextNode-library/main/components/roleAdminGuard.ts",
+    "description": "Verifica si el usuario inyectado previamente en la request de Express cuenta con el rol de Administrador.",
     "dependencies": []
   },
   {
     "name": "gzipCompressor",
+    "framework": "express",
     "category": "performance",
     "type": "middleware",
-    "downloadUrl": "https://raw.githubusercontent.com/tu-usuario/intercept-hub/main/components/gzipCompressor.ts",
-    "description": "Comprime las respuestas HTTP usando GZIP para reducir el consumo de ancho de banda.",
+    "downloadUrl": "https://raw.githubusercontent.com/eddxke/nextNode-library/main/components/gzipCompressor.ts",
+    "description": "Comprime las respuestas HTTP de Express usando GZIP para reducir el consumo de ancho de banda.",
     "dependencies": ["compression", "@types/compression"]
   },
   {
     "name": "antiSpamGuard",
+    "framework": "telegraf",
     "category": "security",
     "type": "guard",
-    "downloadUrl": "https://raw.githubusercontent.com/tu-usuario/intercept-hub/main/components/antiSpamGuard.ts",
-    "description": "Previene el spam en el Bot bloqueando usuarios que envían múltiples comandos en menos de 1.5 segundos.",
+    "downloadUrl": "https://raw.githubusercontent.com/eddxke/nextNode-library/main/components/antiSpamGuard.ts",
+    "description": "Previene el spam en el Bot de Telegraf bloqueando usuarios que envían múltiples comandos en menos de 1.5 segundos.",
     "dependencies": []
   },
   {
     "name": "privateChatOnly",
+    "framework": "telegraf",
     "category": "filters",
     "type": "guard",
-    "downloadUrl": "https://raw.githubusercontent.com/tu-usuario/intercept-hub/main/components/privateChatOnly.ts",
-    "description": "Filtra e impide que el comando sea ejecutado dentro de grupos o supergrupos de Telegram.",
+    "downloadUrl": "https://raw.githubusercontent.com/eddxke/nextNode-library/main/components/privateChatOnly.ts",
+    "description": "Filtra e impide que el comando de Telegraf sea ejecutado dentro de grupos o supergrupos de Telegram.",
     "dependencies": []
   },
   {
     "name": "maintenanceMode",
+    "framework": "telegraf",
     "category": "utils",
     "type": "middleware",
-    "downloadUrl": "https://raw.githubusercontent.com/tu-usuario/intercept-hub/main/components/maintenanceMode.ts",
-    "description": "Intervención global que responde un mensaje de mantenimiento programado bloqueando el avance del flujo.",
+    "downloadUrl": "https://raw.githubusercontent.com/eddxke/nextNode-library/main/components/maintenanceMode.ts",
+    "description": "Intervención global en Telegraf que responde un mensaje de mantenimiento programado bloqueando el avance del flujo.",
     "dependencies": []
   },
   {
     "name": "adminBotGuard",
+    "framework": "telegraf",
     "category": "auth",
     "type": "guard",
-    "downloadUrl": "https://raw.githubusercontent.com/tu-usuario/intercept-hub/main/components/adminBotGuard.ts",
-    "description": "Restringe comandos críticos del Bot de Telegram exclusivamente a una lista blanca de IDs de administradores.",
+    "downloadUrl": "https://raw.githubusercontent.com/eddxke/nextNode-library/main/components/adminBotGuard.ts",
+    "description": "Restringe comandos críticos del Bot de Telegraf exclusivamente a una lista blanca de IDs de administradores.",
     "dependencies": []
   },
   {
     "name": "actionTracker",
+    "framework": "telegraf",
     "category": "analytics",
     "type": "middleware",
-    "downloadUrl": "https://raw.githubusercontent.com/tu-usuario/intercept-hub/main/components/actionTracker.ts",
-    "description": "Mide el tiempo de respuesta interna de las interacciones y clics del Bot para auditoría de rendimiento.",
+    "downloadUrl": "https://raw.githubusercontent.com/eddxke/nextNode-library/main/components/actionTracker.ts",
+    "description": "Mide el tiempo de respuesta interna de las interacciones y clics del Bot de Telegraf para auditoría de rendimiento.",
     "dependencies": []
   }
 ]
