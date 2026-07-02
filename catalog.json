@@ -18,6 +18,15 @@
     "dependencies": ["jsonwebtoken", "@types/jsonwebtoken"]
   },
   {
+    "name": "loggerUtils",
+    "framework": "express",
+    "category": "utils",
+    "type": "middleware",
+    "downloadUrl": "https://raw.githubusercontent.com/eddxke/nextNode-library/main/components/loggerUtils.ts",
+    "description": "Utilidades para el registro de logs en una aplicación Express.",
+    "dependencies": []
+  },
+  {
     "name": "sessionLogger",
     "framework": "telegraf",
     "category": "utils",
